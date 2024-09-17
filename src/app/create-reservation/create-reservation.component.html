@@ -1,0 +1,18 @@
+<h2>Crear nueva reserva</h2>
+<form (ngSubmit)="createReservation()">
+  <label>Fecha:</label>
+  <input [(ngModel)]="reservation.reservationDate" name="date" type="date" required>
+  
+  <label>Hora:</label>
+  <input [(ngModel)]="reservation.reservationTime" name="time" type="time" required>
+  
+  <label>Cliente:</label>
+  <input [(ngModel)]="reservation.customer.name" name="customerName" placeholder="Nombre del cliente" required>
+  <input [(ngModel)]="reservation.customer.email" name="customerEmail" placeholder="Email del cliente" required>
+  <input [(ngModel)]="reservation.customer.phone" name="customerPhone" placeholder="Teléfono del cliente" required>
+
+  <label>Servicio:</label>
+  <input [(ngModel)]="reservation.service.serviceName" name="serviceName" placeholder="Nombre del servicio" required>
+
+  <button type="submit">Crear</button>
+</form>

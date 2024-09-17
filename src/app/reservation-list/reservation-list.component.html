@@ -1,0 +1,8 @@
+<h2>Lista de Reservas</h2>
+<ul>
+  <li *ngFor="let reservation of reservations">
+    {{ reservation.customer.name }} - {{ reservation.service.serviceName }} - {{ reservation.reservationDate }} {{ reservation.reservationTime }}
+    <button (click)="deleteReservation(reservation.id || 0)">Eliminar</button>
+    <a [routerLink]="['/reservations/edit', reservation.id ?? 0]">Editar</a>
+  </li>
+</ul>
